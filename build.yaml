@@ -14,3 +14,4 @@
 ---
 include:
   - board: seeeduino_xiao_ble
+    shield: test_shield
