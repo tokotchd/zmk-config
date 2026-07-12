@@ -1,0 +1,38 @@
+dts/ {
+    /* 1. Setup the input listener to capture trackpad data */
+    tps43_input: tps43_input {
+        compatible = "zmk,input-listener";
+        device = <&tps43>;
+    };
+
+    /* 2. Create a virtual 1x1 keymatrix switch line to satisfy ZMK */
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+        diode-direction = "col2row";
+        col-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;
+        row-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    };
+};
+
+/* 3. Configure the hardware I2C peripheral */
+&xiao_i2c {
+    status = "okay";
+
+    tps43: iqs5xx@74 {
+        compatible = "azoteq,iqs5xx";
+        status = "okay";
+        reg = <0x74>;         /* Default Azoteq address */
+        
+        /* Hardware Pins */
+        rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>; /* Solder RDY pin to D3 */
+
+        /* Behavior Flags: Only enable the Tap feature */
+        one-finger-tap;
+        stationary-threshold = <255>; /* High value disables tracking drift */
+    };
+};

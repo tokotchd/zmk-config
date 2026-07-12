@@ -12,6 +12,8 @@
 #     shield: reviung41
 #
 ---
+# include:
 include:
   - board: seeeduino_xiao_ble
-    shield: test_shield
+#   - board: seeeduino_xiao_ble
+#     shield: test_shield
