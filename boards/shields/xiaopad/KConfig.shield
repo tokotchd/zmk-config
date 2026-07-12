@@ -1,0 +1,2 @@
+config SHIELD_XIAOPAD
+    def_bool $(shields_list_contains,xiaopad)
