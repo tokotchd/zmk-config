@@ -12,9 +12,10 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+      revision: main
     - name: zmk-driver-azoteq-iqs5xx
       remote: aym1607
       revision: main
-      import: true
+      # import: true
   self:
     path: config
