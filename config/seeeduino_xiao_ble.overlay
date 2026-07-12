@@ -31,13 +31,15 @@
         /* Hardware Pins */
         rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>; /* Solder RDY pin to D3 */
 
-        /* Behavior Flags: Only enable the Tap feature */
-        /* one-finger-tap; */
-        
-        /* High value disables tracking drift */
-        /* stationary-threshold = <255>; */ 
-         
-        /* This explicitly maps the Azoteq chip features to ZMK's pointing layer */
+        /* https://github.com/AYM1607/zmk-driver-azoteq-iqs5xx/blob/main/dts/bindings/input/azoteq%2Ciqs5xx-common.yaml */
+        one-finger-tap;        
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+        stationary-threshold = <255>;
         xy-swap;
         x-invert;
     };
