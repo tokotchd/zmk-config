@@ -4,9 +4,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
-    with:
-      mode: build
-      board: xiao_ble
-      shield: xiaopad
-      # THIS LINE FORCES THE WORKFLOW TO FETCH THE REMOTE DRIVER
-      zmk_modules: "git+https://github.com"
