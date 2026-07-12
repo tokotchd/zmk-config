@@ -32,7 +32,13 @@
         rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>; /* Solder RDY pin to D3 */
 
         /* Behavior Flags: Only enable the Tap feature */
-        one-finger-tap;
-        stationary-threshold = <255>; /* High value disables tracking drift */
+        /* one-finger-tap; */
+        
+        /* High value disables tracking drift */
+        /* stationary-threshold = <255>; */ 
+         
+        /* This explicitly maps the Azoteq chip features to ZMK's pointing layer */
+        xy-swap;
+        x-invert;
     };
 };
