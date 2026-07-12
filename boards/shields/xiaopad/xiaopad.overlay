@@ -40,6 +40,7 @@
         reg = <0x74>;         /* Default Azoteq address */
         
         /* Hardware Pins */
+        reset-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW>;
         rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>; /* Solder RDY pin to D3 */
 
         /* https://github.com/AYM1607/zmk-driver-azoteq-iqs5xx/blob/main/dts/bindings/input/azoteq%2Ciqs5xx-common.yaml */
