@@ -14,7 +14,7 @@
 ---
 # include:
 include:
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: xiaopad
     extra-args: -DZMK_EXTRA_MODULES="/__w/zmk-config/zmk-config;/__w/zmk-config/zmk-config/zmk-driver-azoteq-iqs5xx"
 #   - board: seeeduino_xiao_ble
