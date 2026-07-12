@@ -37,11 +37,10 @@
     tps43: iqs5xx@74 {
         compatible = "azoteq,iqs5xx";
         status = "okay";
-        reg = <0x74>;         /* Default Azoteq address */
+        reg = <0x74>;
         
-        /* Hardware Pins */
         reset-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW>;
-        rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>; /* Solder RDY pin to D3 */
+        rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>;
 
         /* https://github.com/AYM1607/zmk-driver-azoteq-iqs5xx/blob/main/dts/bindings/input/azoteq%2Ciqs5xx-common.yaml */
         one-finger-tap;        
@@ -51,7 +50,8 @@
         scroll;
         natural-scroll-y;
         natural-scroll-x;
-        stationary-threshold = <255>;
+        bottom-beta = <5>;
+        stationary-threshold = <5>;
         switch-xy;
     };
 };
