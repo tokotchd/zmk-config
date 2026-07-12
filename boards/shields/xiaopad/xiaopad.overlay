@@ -48,7 +48,7 @@
         status = "okay";
         reg = <0x74>;
         
-        reset-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW>;
+        reset-gpios = <&xiao_d 2 GPIO_ACTIVE_HIGH>;
         rdy-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>;
 
         /* https://github.com/AYM1607/zmk-driver-azoteq-iqs5xx/blob/main/dts/bindings/input/azoteq%2Ciqs5xx-common.yaml */
