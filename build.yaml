@@ -16,6 +16,5 @@
 include:
   - board: xiao_ble
     shield: xiaopad
-    extra-args: -DZMK_EXTRA_MODULES="/__w/zmk-config/zmk-config/zmk-driver-azoteq-iqs5xx"
-#   - board: seeeduino_xiao_ble
+    extra-args: -DZMK_EXTRA_MODULES="/__w/zmk-config/zmk-config;/__w/zmk-config/zmk-config/zmk-driver-azoteq-iqs5xx"#   - board: seeeduino_xiao_ble
 #     shield: test_shield
