@@ -20,9 +20,8 @@
 };
 
 /* 3. Configure the hardware I2C peripheral */
-&xiao_i2c {
+&arduino_i2c {
     status = "okay";
-
     tps43: iqs5xx@74 {
         compatible = "azoteq,iqs5xx";
         status = "okay";
