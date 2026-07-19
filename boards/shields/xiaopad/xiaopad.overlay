@@ -29,33 +29,14 @@
         col-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;
         row-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
-
-    /* 3. Force the internal VCC_IO power gate high to power the 3.3V rail */
-    vcc_io_regulator: regulator {
-        compatible = "regulator-fixed";
-        regulator-name = "vcc_io";
-        enable-gpios = <&gpio1 8 GPIO_ACTIVE_HIGH>; // Powers P1.08 (Internal Power Switch)
-        regulator-always-on;
-        regulator-boot-on;
-    };
+    
 };
 
-&xiao_i2c { status = "disabled"; };
-&spi0 { status = "disabled"; };
-
-&i2c0 {
+&xiao_i2c {
     status = "okay";
-    compatible = "nordic,nrf-twim";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
-
-    /* Target the exact physical pins for Seeed XIAO D4 and D5 */
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
-
     tps43: iqs5xx@74 {
-        compatible = "azoteq,iqs5xx";
         status = "okay";
+        compatible = "azoteq,iqs5xx";
         reg = <0x74>;
         
         reset-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;
