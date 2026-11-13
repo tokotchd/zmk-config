@@ -1,7 +1,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
+    tps43_input: tps43_input {
+        compatible = "zmk,input-listener";
+        device = <&tps43>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
