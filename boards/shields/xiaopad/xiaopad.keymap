@@ -7,7 +7,10 @@
     tps43_input: tps43_input {
         compatible = "zmk,input-listener";
         device = <&tps43>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+            &zip_inertia
+        >;
     };
 
     keymap {
@@ -19,4 +22,11 @@
             >;
         };
     };
+};
+
+&zip_inertia {
+    trigger-ms = <35>;              // Wait time after lift-off before coasting starts
+    move-decay-factor-int = <90>;   // 0-99% velocity retained per tick (higher = less friction)
+    move-threshold-start = <15>;    // Minimum flick speed required to trigger coasting
+    move-threshold-stop = <1>;      // Speed at which cursor comes to a full stop
 };

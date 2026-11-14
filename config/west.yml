@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: aym1607
       url-base: https://github.com/AYM1607
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -11,6 +13,9 @@ manifest:
       revision: main
     - name: zmk-driver-azoteq-iqs5xx
       remote: aym1607
+      revision: main
+    - name: zmk-input-inertia
+      remote: amgskobo
       revision: main
   self:
     path: config
