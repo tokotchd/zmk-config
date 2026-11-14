@@ -43,13 +43,13 @@
         rdy-gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>;
 
         /* https://github.com/AYM1607/zmk-driver-azoteq-iqs5xx/blob/main/dts/bindings/input/azoteq%2Ciqs5xx-common.yaml */
-        one-finger-tap;        
-        press-and-hold;
-        press-and-hold-time = <250>;
-        two-finger-tap;
-        scroll;
-        natural-scroll-y;
-        natural-scroll-x;
+        // one-finger-tap;        
+        // press-and-hold;
+        // press-and-hold-time = <250>;
+        // two-finger-tap;
+        // scroll;
+        // natural-scroll-y;
+        // natural-scroll-x;
         bottom-beta = <5>;
         stationary-threshold = <5>;
         // switch-xy; - Doesn't Work Anyways, see keymap file
