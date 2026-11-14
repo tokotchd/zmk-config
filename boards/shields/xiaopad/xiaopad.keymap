@@ -2,7 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <zmk-input-inertia/input/processor/input_inertia.dtsi>
 
 / {
     tps43_input: tps43_input {
